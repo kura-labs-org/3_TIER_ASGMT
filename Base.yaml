@@ -209,7 +209,7 @@ Resources:
     Properties: 
       GroupDescription: String
       GroupName: "Bastion-SG"
-      SecurityGroupEgress: 
+      SecurityGroupIngress: 
         - IpProtocol: TCP
           FromPort: 22
           ToPort: 22
@@ -220,7 +220,7 @@ Resources:
     Properties: 
       ImageId: ami-09e67e426f25ce0d7
       InstanceType: t2.micro
-      SubnetId: !Ref PrivateSubnet1
+      SubnetId: !Ref PublicSubnet1
       KeyName: "myKey"
       SecurityGroupIds:
         - !Ref BastionSG
