@@ -215,6 +215,51 @@ Resources:
           ToPort: 22
           CidrIp: 0.0.0.0/0
       VpcId: !Ref VPC
+  NginxSG:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: "Security group that allows SSH from anywhere"
+      GroupName: "Nginx"
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          SourceSecurityGroupId:
+            Fn::GetAtt:
+            - BastionSG
+            - GroupId
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 443
+          ToPort: 443
+          CidrIp: 0.0.0.0/0
+      VpcId: !Ref VPC
+  WebSG:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: "Security group that allows SSH from anywhere"
+      GroupName: "Web"
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          SourceSecurityGroupId:
+            Fn::GetAtt:
+            - BastionSG
+            - GroupId
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 443
+          ToPort: 443
+          CidrIp: 0.0.0.0/0
+      VpcId: !Ref VPC
+  
   Test1:
     Type: AWS::EC2::Instance
     Properties: 
@@ -234,6 +279,8 @@ Resources:
       InstanceType: t2.micro
       SubnetId: !Ref PrivateSubnet1
       KeyName: "myKey"
+      SecurityGroupIds:
+        - !Ref NginxSG
       Tags:
         - Key: "Name"
           Value: "NginxProxy"
@@ -244,6 +291,8 @@ Resources:
       InstanceType: t2.micro
       SubnetId: !Ref PrivateSubnet1
       KeyName: "myKey"
+      SecurityGroupIds:
+        - !Ref WebSG
       Tags: 
         - Key: "Name"
           Value: "phpMYAdmin"
