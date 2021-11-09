@@ -3,4 +3,5 @@
 
 <h2>Welcome to the 3 Tier assignment repo.</h2>  
 
-- Make a pull request to submit your assignment: 
+
+![image](https://user-images.githubusercontent.com/60336145/140838289-f9d88a43-07ef-41fc-a86b-6f2064a4908c.png)
