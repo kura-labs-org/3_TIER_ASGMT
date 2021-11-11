@@ -253,11 +253,17 @@ Resources:
         - IpProtocol: tcp
           FromPort: 80
           ToPort: 80
-          CidrIp: 0.0.0.0/0
+          SourceSecurityGroupId:
+            Fn::GetAtt:
+            - NginxSG
+            - GroupId
         - IpProtocol: tcp
           FromPort: 443
           ToPort: 443
-          CidrIp: 0.0.0.0/0
+          SourceSecurityGroupId:
+            Fn::GetAtt:
+            - NginxSG
+            - GroupId
       VpcId: !Ref VPC
   
   Test1:
@@ -345,3 +351,7 @@ Outputs:
   NoIngressSecurityGroup:
     Description: Security group with no ingress rule
     Value: !Ref NoIngressSecurityGroup
+
+  ALBSG:
+    Description: Security group that allows client access on HTTP/HTTPS for the Load Balancer
+    Value: !Ref ALBSG
