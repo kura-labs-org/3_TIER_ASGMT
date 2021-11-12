@@ -42,3 +42,4 @@ The benefits of ACM were stated above, but it is essentially reduction of resour
 
 <h3>Security Groups and Topology</h3>
 
+![image](https://github.com/kawangwong/3_TIER_ASGMT/blob/main/Untitled%20Diagram.drawio.png)
