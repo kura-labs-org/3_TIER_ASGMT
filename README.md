@@ -33,8 +33,12 @@ For this case, some of the troubles I ran into as the system architect was how t
 - The last method is to use a Nat Gateway and elastic IP to do outgoing data requests from the private IP.
 
 <h3> SSL </h3>
+
 - There are various ways to ensure SSL here. First is through ACM
 - Second is through Nginx and creating a self-signed CA.
 - Last is on apache2, then creating a self-signed CA.
 
 The benefits of ACM were stated above, but it is essentially reduction of resource used by EC2 and having a CA cert that is signed and recognized by an authoritative server.
+
+<h3>Security Groups and Topology</h3>
+
