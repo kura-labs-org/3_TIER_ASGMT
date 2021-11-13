@@ -1,6 +1,6 @@
 # 3_TIER_ASGMT
-<h1 align=center>3 Tier assignment</h1>
+<h1 align=center>Three Tier Assignment</h1>
 
-<h2>Welcome to the 3 Tier assignment repo.</h2>  
+![image](https://github.com/Deodutt/3_TIER_ASGMT/blob/main/Documentation/preview.png)
 
-- Make a pull request to submit your assignment: 
+Follow this link to the deployment instructions 👉 [here](https://github.com/Deodutt/3_TIER_ASGMT/blob/main/Documentation/3%20Tier%20Assignment%20-%20Documentation.pdf)
