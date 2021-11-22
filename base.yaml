@@ -274,20 +274,20 @@ Resources:
      GroupDescription: "Security group that allows SSH from the bastion host only"
      GroupName: "phpMyAdmin"
      SecurityGroupIngress:
-      - IpProtocol: tcp
+      -IpProtocol: tcp
       FromPort: 22
       ToPort: 22
       SourceSecurityGroupId:
        Fn::GetAtt:
-       - BastionSecurityGroup
-       - GroupId
-      - IpProtocol: tcp
+       -BastionSecurityGroup
+       -GroupId
+      -IpProtocol: tcp
       FromPort: 80
       ToPort: 80
       SourceSecurityGroupId:
        Fn::GetAtt:
-       - NginxSecurityGroup
-       - GroupId
+       -NginxSecurityGroup
+       -GroupId
     VpcId: !Ref VPC
     
   phpMyAdminEC2Instance:
@@ -298,9 +298,9 @@ Resources:
      SubnetId: !Ref PrivateSubnet1
      KeyName: !Ref KeyName
      SecurityGroupIds:
-      - !Ref phpMyAdminSecurityGroup
+      -!Ref phpMyAdminSecurityGroup
      Tags:
-      - Key: "Name"
+      -Key: "Name"
       Value: "phpMyAdmin"
     
   ThreeTierSecurityGroup:
@@ -309,11 +309,11 @@ Resources:
      GroupDescription: "Security group that allows client access on HTTP/HTTPS for the Load Balancer"
      GroupName: "ThreeTier"
      SecurityGroupIngress:
-      - IpProtocol: tcp
+      -IpProtocol: tcp
         FromPort: 80
         ToPort: 80
         CidrIp: 0.0.0.0/0
-      - IpProtocol: tcp
+      -IpProtocol: tcp
         FromPort: 443
         ToPort: 443
         CidrIp: 0.0.0.0/0
@@ -324,7 +324,7 @@ Resources:
      GroupDescription: "Security group for the RDS MySQL database that allows access from phpMyAdmin SG only"
      GroupName: "ThreeTierDB"
      SecurityGroupIngress:
-      - IpProtocol: tcp
+      -IpProtocol: tcp
         FromPort: 3306
         ToPort: 3306
         SourceSecurityGroupId:
