@@ -263,7 +263,7 @@ Resources:
     SubnetId: !Ref PrivateSubnet1
     KeyName: !Ref KeyName
     SecurityGroupIds:
-     - !Ref NginxSecurityGroup
+     -!Ref NginxSecurityGroup
     Tags:
      -Key: "Name"
      Value: "Nginx"
