@@ -11,30 +11,30 @@ Parameters:
   VpcCIDR:
     Description: Please enter the IP range (CIDR notation) for this VPC
     Type: String
-    Default: 10.192.0.0/16
+    Default: 192.168.0.0/16
 
   PublicSubnet1CIDR:
     Description: Please enter the IP range (CIDR notation) for the public subnet in the first Availability Zone
     Type: String
-    Default: 10.192.10.0/24
+    Default: 192.168.0.0/18
 
   PublicSubnet2CIDR:
     Description: Please enter the IP range (CIDR notation) for the public subnet in the second Availability Zone
     Type: String
-    Default: 10.192.11.0/24
+    Default: 192.168.64.0/18
 
   PrivateSubnet1CIDR:
     Description: Please enter the IP range (CIDR notation) for the private subnet in the first Availability Zone
     Type: String
-    Default: 10.192.20.0/24
+    Default: 192.168.128.0/18
 
   PrivateSubnet2CIDR:
     Description: Please enter the IP range (CIDR notation) for the private subnet in the second Availability Zone
     Type: String
-    Default: 10.192.21.0/24
-    
+    Default: 192.168.192.0/18
+  
   KeyName:
-    Description: Name of an existing EC2 KeyPair to enable SSH access to the instance
+    Description: EC2 KeyPair that enables SSH access to the instances
     Type: AWS::EC2::KeyPair::KeyName
 
 Resources:
@@ -209,122 +209,140 @@ Resources:
 
   BastionSecurityGroup:
     Type: AWS::EC2::SecurityGroup
-    Properties:
-     GroupDescription: "Security group that allows SSH from anywhere"
-     GroupName: "Bastion"
-     SecurityGroupIngress:
-      -IpProtocol: tcp
-       FromPort: 22
-       ToPort: 22
-       CidrIp: 0.0.0.0/0
-     VpcId: !Ref VPC
-     
-  BastionEC2Instance:
-   Type: AWS::EC2::Instance
-   Properties:
-    ImageId: ami-09e67e426f25ce0d7
-    InstanceType: t2.micro
-    SubnetId: !Ref PublicSubnet1
-    KeyName: !Ref KeyName
-    SecurityGroupIds:
-     -!Ref BastionSecurityGroup
-    Tags:
-     -Key: "Name"
-      Value: "Bastion"
-
+    Properties: 
+      GroupDescription: String
+      GroupName: "Bastion-SG"
+      SecurityGroupIngress: 
+        - IpProtocol: TCP
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+      VpcId: !Ref VPC
+  
   NginxSecurityGroup:
-   Type: AWS::EC2::SecurityGroup
-   Properties:
-    GroupDescription: "Security group that allows SSH from bastion host only and allows client access on HTTP/HTTPS"
-    GroupName: "Nginx"
-    SecurityGroupIngress:
-     -IpProtocol: tcp
-       FromPort: 22
-       ToPort: 22
-       SourceSecurityGroupId:
-       Fn::GetAtt:
-       - BastionSecurityGroup
-       - GroupId
-     -IpProtocol: tcp
-       FromPort: 80
-       ToPort: 80
-       CidrIp: 0.0.0.0/0
-     -IpProtocol: tcp
-       FromPort: 443
-       ToPort: 443
-       CidrIp: 0.0.0.0/0
-     VpcId: !Ref VPC
-   
-  NginxEC2Instance:
-   Type: AWS::EC2::Instance
-   Properties:
-    ImageId: ami-09e67e426f25ce0d7
-    InstanceType: t2.micro
-    SubnetId: !Ref PrivateSubnet1
-    KeyName: !Ref KeyName
-    SecurityGroupIds:
-     -!Ref NginxSecurityGroup
-    Tags:
-     -Key: "Name"
-     Value: "Nginx"
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: "Security group that allows SSH from anywhere"
+      GroupName: "Nginx"
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          SourceSecurityGroupId:
+            Fn::GetAtt:
+            - BastionSecurityGroup
+            - GroupId
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 443
+          ToPort: 443
+          CidrIp: 0.0.0.0/0
+      VpcId: !Ref VPC
   
   phpMyAdminSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
-     GroupDescription: "Security group that allows SSH from the bastion host only"
-     GroupName: "phpMyAdmin"
-     SecurityGroupIngress:
-      -IpProtocol: tcp
-      FromPort: 22
-      ToPort: 22
-      SourceSecurityGroupId:
-       Fn::GetAtt:
-       -BastionSecurityGroup
-       -GroupId
-      -IpProtocol: tcp
-      FromPort: 80
-      ToPort: 80
-      SourceSecurityGroupId:
-       Fn::GetAtt:
-       -NginxSecurityGroup
-       -GroupId
-    VpcId: !Ref VPC
-    
-  phpMyAdminEC2Instance:
+      GroupDescription: "Security group that allows SSH from anywhere"
+      GroupName: "phpMyAdmin"
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          SourceSecurityGroupId:
+            Fn::GetAtt:
+            - BastionSecurityGroup
+            - GroupId
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          SourceSecurityGroupId:
+            Fn::GetAtt:
+            - NginxSecurityGroup
+            - GroupId
+        - IpProtocol: tcp
+          FromPort: 443
+          ToPort: 443
+          SourceSecurityGroupId:
+            Fn::GetAtt:
+            - NginxSecurityGroup
+            - GroupId
+      VpcId: !Ref VPC
+ 
+#------------------------------------------------------------------------------
+# Tier 1
+#------------------------------------------------------------------------------
+  BastionEC2Instance:
     Type: AWS::EC2::Instance
-    Properties:
-     ImageId: ami-09e67e426f25ce0d7
-     InstanceType: t2.micro
-     SubnetId: !Ref PrivateSubnet1
-     KeyName: !Ref KeyName
-     SecurityGroupIds:
-      -!Ref phpMyAdminSecurityGroup
-     Tags:
-      -Key: "Name"
-      Value: "phpMyAdmin"
-    
+    Properties: 
+      ImageId: ami-09e67e426f25ce0d7
+      InstanceType: t2.micro
+      SubnetId: !Ref PublicSubnet1
+      KeyName: !Ref KeyName
+      SecurityGroupIds:
+        - !Ref BastionSecurityGroup
+      Tags: 
+        - Key: "Name"
+          Value: "BastionHost"
+          
+#------------------------------------------------------------------------------
+# Tier 2
+#------------------------------------------------------------------------------
+
+  NginxEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties: 
+      ImageId: ami-09e67e426f25ce0d7
+      InstanceType: t2.micro
+      SubnetId: !Ref PrivateSubnet1
+      KeyName: !Ref KeyName
+      SecurityGroupIds:
+        - !Ref NginxSecurityGroup
+      Tags:
+        - Key: "Name"
+          Value: "NginxProxy"
+  
+#------------------------------------------------------------------------------
+# Tier 3
+#------------------------------------------------------------------------------
+  phpMyAdminEC2Instance:       
+    Type: AWS::EC2::Instance
+    Properties: 
+      ImageId: ami-09e67e426f25ce0d7
+      InstanceType: t2.micro
+      SubnetId: !Ref PrivateSubnet1
+      KeyName: !Ref KeyName
+      SecurityGroupIds:
+        - !Ref phpMyAdminSecurityGroup
+      Tags: 
+        - Key: "Name"
+          Value: "phpMYAdmin"
+
   ThreeTierSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
-     GroupDescription: "Security group that allows client access on HTTP/HTTPS for the Load Balancer"
-     GroupName: "ThreeTier"
-     SecurityGroupIngress:
-      -IpProtocol: tcp
-        FromPort: 80
-        ToPort: 80
-        CidrIp: 0.0.0.0/0
-      -IpProtocol: tcp
-        FromPort: 443
-        ToPort: 443
-        CidrIp: 0.0.0.0/0
-     VpcId: !Ref VPC
+      GroupDescription: "Security group that allows client access on HTTP/HTTPS for the Load Balancer"
+      GroupName: "ThreeTier"
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 443
+          ToPort: 443
+          CidrIp: 0.0.0.0/0
+      VpcId: !Ref VPC
+
   ThreeTierDBSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
      GroupDescription: "Security group for the RDS MySQL database that allows access from phpMyAdmin SG only"
      GroupName: "ThreeTierDB"
      SecurityGroupIngress:
-      -IpProtocol: tcp
+      - IpProtocol: tcp
         FromPort: 3306
         ToPort: 3306
         SourceSecurityGroupId:
@@ -332,7 +350,7 @@ Resources:
          - phpMyAdminSecurityGroup
          - GroupId
      VpcId: !Ref VPC
-
+     
 Outputs:
   VPC:
     Description: A reference to the created VPC
@@ -365,17 +383,13 @@ Outputs:
   NoIngressSecurityGroup:
     Description: Security group with no ingress rule
     Value: !Ref NoIngressSecurityGroup
-    
+
   BastionSecurityGroup:
     Description: Security group with SSH from anywhere ingress rule
     Value: !Ref BastionSecurityGroup
 
   NginxSecurityGroup:
     Description: Security group with SSH from anywhere ingress rule
-    Value: !Ref NginxSecurityGroup
-
-  NginxSecurityGroup:
-    Description: Security group that allows SSH from bastion host only and allows client access on HTTP/HTTPS
     Value: !Ref NginxSecurityGroup
 
   phpMyAdminSecurityGroup:
