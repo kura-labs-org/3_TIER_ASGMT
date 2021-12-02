@@ -1,4 +1,4 @@
-<h1 align=center>Three Tier assignment</h1>
+<h1 align=center>Three Tier Application</h1>
 
 ## Goal:
 The goal of this project is to create a [three-tier](https://docs.aws.amazon.com/whitepapers/latest/serverless-multi-tier-architectures-api-gateway-lambda/three-tier-architecture-overview.html) architecture application in an AWS VPC (Virtual Private Cloud) using cloudFormation. <br>
