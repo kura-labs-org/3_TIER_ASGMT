@@ -303,6 +303,153 @@ sudo systemctl status apache2
 You can login by entering 'root' for the username and the password you created before for password
 
 # Task 1 Procedure: Create a Web Proxy:
+1. Create another EC2 and have the phpmyadmin EC2 running as well <br>
+<br>
+2. This EC2 will be referenced as webtier <br>
+<br>
+3. Include ports ssh and http that can be accessed anywhere <br>
+<br>
+4. Run:
+```
+sudo apt update
+sudo apt upgrade
+```
+5. Run:
+```
+sudo apt install nginx
+```
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task1/webproxy/6.png width="1000" />
+     </h1>
+</html> 
+6. Run:
+```
+cd /etc/nginx/sites-available
+```
+Then run
+```
+ls
+```
+There should be one file called "default"<br>
+<br>
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task1/webproxy/7.png width="1000" />
+     </h1>
+</html> 
+
+7. Now run:
+```
+sudo unlink /etc/nginx/sites-enabled/default
+```
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task1/webproxy/8.png width="1000" />
+     </h1>
+</html> 
+
+8. Run the command:
+```
+sudo nano reverse-proxy.conf
+```
+9. Paste the following code in the reverse-proxy document:
+```
+server {
+    listen 80;
+    location / {
+        proxy_pass http://''
+```
+'' is private ip address of the ec2 with phpmyadmin and apache already installed <br>
+Save with CTRL + S and exit with CTRL + X <br>
+<br>
+
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task1/webproxy/9.png width="1000" />
+     </h1>
+</html> 
+
+10. Run:
+```
+ls /etc/nginx/sites-enabled
+```
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task1/webproxy/10.png width="1000" />
+     </h1>
+</html> 
+
+11. Run:
+```
+sudo ln -s /etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-enabled/reverse-proxy.conf
+```
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task1/webproxy/11.png width="1000" />
+     </h1>
+</html> 
+
+12. Run:
+```
+ls /etc/nginx/sites-enabled
+```
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task1/webproxy/12.png width="1000" />
+     </h1>
+</html> 
+13. Run:
+```
+cd ..
+```
+Now the terminal is in the /etc/nginx directory. Run:
+```
+ls
+```
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task1/webproxy/13.png width="1000" />
+     </h1>
+</html> 
+There are many files and there should be a file called nginx.conf. Run:
+```
+sudo nano nginx.conf
+```
+14. Run:
+```
+sudo systemctl restart nginx
+```
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task1/webproxy/14.png width="1000" />
+     </h1>
+</html> 
+15. Run:
+```
+systemctl status nginx
+```
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task1/webproxy/15.png width="1000" />
+     </h1>
+</html> 
+16. Take the web tier EC2 public address and log in to Apache and phpmyadmin:      
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task1/webproxy/16.png width="1000" />
+     </h1>
+</html> 
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task1/webproxy/17.png width="1000" />
+     </h1>
+</html> 
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task1/webproxy/18.png width="1000" />
+     </h1>
+</html> 
 
 # Task 2 
 
