@@ -531,21 +531,19 @@ sudo nano config.inc.php
         <img style="float: center;" src=/3tierpictures/task3/6.png width="1000" />
      </h1>
 </html> 
-6. Use ALT + G to go to line 102. Below the }, paste the following code:
-```
-
-$i++;
-$cfg['Servers'][$i]['host']          = '__FILL_IN_DETAILS__';
-$cfg['Servers'][$i]['port']          = '3306';
-$cfg['Servers'][$i]['socket']        = '';
-$cfg['Servers'][$i]['connect_type']  = 'tcp';
-$cfg['Servers'][$i]['extension']     = 'mysql';
-$cfg['Servers'][$i]['compress']      = FALSE;
-$cfg['Servers'][$i]['auth_type']     = 'config';
-$cfg['Servers'][$i]['user']          = '__FILL_IN_DETAILS__';
-$cfg['Servers'][$i]['password']      = '__FILL_IN_DETAILS__'
-
-```
+6. Use ALT + G to go to line 102. Below the }, paste the following code: <br>
+<br>
+$i++;                                                         <br>
+$cfg['Servers'][$i]['host']          = '__FILL_IN_DETAILS__'; <br>
+$cfg['Servers'][$i]['port']          = '3306'; <br>
+$cfg['Servers'][$i]['socket']        = ''; <br>
+$cfg['Servers'][$i]['connect_type']  = 'tcp'; <br>
+$cfg['Servers'][$i]['extension']     = 'mysql'; <br>
+$cfg['Servers'][$i]['compress']      = FALSE; <br>
+$cfg['Servers'][$i]['auth_type']     = 'config'; <br>
+$cfg['Servers'][$i]['user']          = '__FILL_IN_DETAILS__'; <br>
+$cfg['Servers'][$i]['password']      = '__FILL_IN_DETAILS__' <br>
+<br>
 
 <html>
      <h1>
