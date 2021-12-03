@@ -235,8 +235,68 @@ At least 1 number <br>
 At least 1 special character (such as an !) <br>
 <br>
 
-20. 
+20. Run the sudo mysql to see the new password:
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task1/phpmyadmin/23.png width="1000" />
+     </h1>
+</html>
 
+21. Go to this directory and make a file:
+```
+cd /etc/php/7.4/apache2
+sudo nano php.ini
+```
+22. In the apache2 file, press Alt + G to go to line 895:
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task1/phpmyadmin/24.png width="1000" />
+     </h1>
+</html> 
+23. Remove the ; on line 895 as shown below in the picture:
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task1/phpmyadmin/25.png width="1000" />
+     </h1>
+</html> 
+24. Run:
+```
+sudo nano /etc/apache2/apache2.conf
+```
+25. On the bottom of the page, write:
+```
+include /etc/phpmyadmin/apache.conf
+```
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task1/phpmyadmin/26.png width="1000" />
+     </h1>
+</html>
+26. Run:
+```
+sudo systemctl restart apache2
+```
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task1/phpmyadmin/27.png width="1000" />
+     </h1>
+</html> 
+27. Run:
+```
+sudo systemctl status apache2
+```
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task1/phpmyadmin/28.png width="1000" />
+     </h1>
+</html> 
+28. Go to the web browser to check for phpmyadmin. Enter in the web browser the EC2 public IP address followed by /phpmyadmin/
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task1/phpmyadmin/29.png width="1000" />
+     </h1>
+</html>
+You can login by entering 'root' for the username and the password you created before for password
 
 # Task 1 Procedure: Create a Web Proxy:
 
