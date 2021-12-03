@@ -172,7 +172,7 @@ sudo mysql_secure_installation
 ```
 sudo mysql
 ```
-15. 
+
 
 # Task 1 Procedure: Create a Web Proxy:
 
