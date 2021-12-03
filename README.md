@@ -206,7 +206,36 @@ sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl
         <img style="float: center;" src=/3tierpictures/task1/phpmyadmin/18.png width="1000" />
      </h1>
 </html>
-19. 
+
+19. If an error occurred, run the commands down below to change the password:
+```
+sudo apt install phpmyadmin
+sudo phpenmod mbstring
+```
+
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task1/phpmyadmin/21.png width="1000" />
+     </h1>
+</html> 
+A successful run should show the following:
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task1/phpmyadmin/22.png width="1000" />
+     </h1>
+</html> 
+Where a password can be entered in the '' at the end of the statement: ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY ''; <br>
+Do not dispose of the ''. Place the password in the ''. <br>
+<br>
+A password should contain: <br>
+At least 1 lowercase letter <br>
+At least 1 uppercase letter<br>
+8 characters <br>
+At least 1 number <br>
+At least 1 special character (such as an !) <br>
+<br>
+
+20. 
 
 
 # Task 1 Procedure: Create a Web Proxy:
