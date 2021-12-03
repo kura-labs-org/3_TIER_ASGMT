@@ -148,64 +148,7 @@ Save the file by pressing 'Ctrl + S' and then press 'Ctrl + X'  exit out of the 
 ```
 sudo apt install mysql-server
 ```
-<html>
-     <h1>
-        <img style="float: center;" src=/3tierpictures/task1/phpmyadmin/10.png width="1000" />
-     </h1>
-</html> 
-11. After installing mysql server, run:
-```
-sudo mysql_secure_installation
-```
-<html>
-     <h1>
-        <img style="float: center;" src=/3tierpictures/task1/phpmyadmin/11.png width="1000" />
-     </h1>
-</html>
-12. 'mysql_secure_installation' then shows instructions to install a password
-<html>
-     <h1>
-        <img style="float: center;" src=/3tierpictures/task1/phpmyadmin/12.png width="1000" />
-     </h1>
-</html> 
-13. Choose and enter a **strong** password and **remember the password as it will be needed** and skip 'Remove anonymous users', ' Disallow root login remotely', 'Remove test database', and 'Reload privilege tables'. You can just press Enter to skip these questions. <br>
-<br>
-14. Enter:
-```
-sudo mysql
-```
-<html>
-     <h1>
-        <img style="float: center;" src=/3tierpictures/task1/phpmyadmin/14.png width="1000" />
-     </h1>
-</html> 
-15. Run:
-```
-sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl
-```
-<html>
-     <h1>
-        <img style="float: center;" src=/3tierpictures/task1/phpmyadmin/15.png width="1000" />
-     </h1>
-</html> 
-16. Choose apache2, the red light shows what option you will choose. Press enter to confirm.
-<html>
-     <h1>
-        <img style="float: center;" src=/3tierpictures/task1/phpmyadmin/16.png width="1000" />
-     </h1>
-</html> 
-17. Choose yes:
-<html>
-     <h1>
-        <img style="float: center;" src=/3tierpictures/task1/phpmyadmin/17.png width="1000" />
-     </h1>
-</html>
-18. Enter the password:
-<html>
-     <h1>
-        <img style="float: center;" src=/3tierpictures/task1/phpmyadmin/18.png width="1000" />
-     </h1>
-</html>
+
 # Task 1 Procedure: Create a Web Proxy:
 
 # Task 2 
