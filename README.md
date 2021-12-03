@@ -413,9 +413,8 @@ ls
         <img style="float: center;" src=/3tierpictures/task1/webproxy/13.png width="1000" />
      </h1>
 </html> 
-There are many files and there should be a file called nginx.conf. Run: <br>
+There are many files and there should be a file called nginx.conf. <br>
 <br>
-sudo nano nginx.conf
 
 14. Run:
 ```
@@ -426,6 +425,7 @@ sudo nano nginx.conf
         <img style="float: center;" src=/3tierpictures/task1/webproxy/14.png width="1000" />
      </h1>
 </html> 
+
 15. Run:
 ```
 systemctl status nginx
@@ -435,6 +435,7 @@ systemctl status nginx
         <img style="float: center;" src=/3tierpictures/task1/webproxy/15.png width="1000" />
      </h1>
 </html> 
+
 16. Take the web tier EC2 public address and log in to Apache and phpmyadmin:      
 <html>
      <h1>
