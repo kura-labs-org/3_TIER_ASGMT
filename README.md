@@ -547,7 +547,7 @@ $cfg['Servers'][$i]['password']      = '__FILL_IN_DETAILS__' <br>
 Make sure to change FILL in DETAILS lines <br>
 <br>
 host - endpoint url of data base which is found on AWS RDS page <br>
-Click on Credential Details for user and password 
+Click on Credential Details on AWS for user and password 
 
 <html>
      <h1>
