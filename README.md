@@ -88,12 +88,14 @@ sudo apt install apache2
         <img style="float: center;" src=/3tierpictures/task1/phpmyadmin/3.png width="1000" />
      </h1>
 </html> 
+
 4. Go to a web browser and paste the EC2's public address. The Apache2 Ubuntu Default Page should show up to display it successfully downloaded Apache:
 <html>
      <h1>
         <img style="float: center;" src=/3tierpictures/task1/phpmyadmin/4.png width="1000" />
      </h1>
 </html> 
+
 5. More packages will now be installed onto the EC2:
 ```
 sudo apt install php libapache2-mod-php php-mysql
