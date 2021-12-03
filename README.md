@@ -1,6 +1,13 @@
 # 3_TIER_ASGMT
-<h1 align=center>3 Tier assignment</h1>
 
-<h2>Welcome to the 3 Tier assignment repo.</h2>  
+# Task 1
 
-- Make a pull request to submit your assignment: 
+<html>
+     <h1>
+        <img style="float: center;" src=3-tier assignment_work/Task 1/VPC/1.png width="1000" />
+     </h1>
+</html> 
+
+# Task 2
+
+# Task 3
