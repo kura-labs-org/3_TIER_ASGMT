@@ -274,7 +274,7 @@ include /etc/phpmyadmin/apache.conf
 </html>
 26. Run:
 ```
-sudo systemctl restart apache2
+sudo systemctl restart apache
 ```
 <html>
      <h1>
