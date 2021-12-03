@@ -159,6 +159,7 @@ sudo mysql_secure_installation
         <img style="float: center;" src=/3tierpictures/task1/phpmyadmin/11.png width="1000" />
      </h1>
 </html>
+
 12. 'mysql_secure_installation' then shows instructions to install a password
 <html>
      <h1>
@@ -184,8 +185,8 @@ sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl
      <h1>
         <img style="float: center;" src=/3tierpictures/task1/phpmyadmin/15.png width="1000" />
      </h1>
-</html> 
-16. Choose apache2, the red light shows what option you will choose. Press enter to confirm.
+</html>
+16. Choose apache2, the red light shows what option you will choose. Press enter to confirm. 
 <html>
      <h1>
         <img style="float: center;" src=/3tierpictures/task1/phpmyadmin/16.png width="1000" />
@@ -203,6 +204,7 @@ sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl
         <img style="float: center;" src=/3tierpictures/task1/phpmyadmin/18.png width="1000" />
      </h1>
 </html>
+19. 
 
 # Task 1 Procedure: Create a Web Proxy:
 
