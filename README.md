@@ -144,6 +144,7 @@ Save the file by pressing 'Ctrl + S' and then press 'Ctrl + X'  exit out of the 
         <img style="float: center;" src=/3tierpictures/task1/phpmyadmin/9.png width="1000" />
      </h1>
 </html> 
+
 10. The next package mysql-server will be installed:
 ```
 sudo apt install mysql-server
