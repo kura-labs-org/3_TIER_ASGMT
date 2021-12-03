@@ -55,6 +55,7 @@ Below is the image of the VPC template that will be used:
 
 1. Create an EC2 on AWS. In this tutorial, the Ubuntu 20.0.4 EC2 will be used. After creating it, ,log in into the EC2. <br>
 <br>
+
 2. Run the following command:
 ```
 sudo apt update
