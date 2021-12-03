@@ -121,7 +121,7 @@ nano is a command to make a file and the words proceeding after nano is the name
 <br>
 8. In the test.php file write the following shown below:
 ```
-<?php phpinfo();
+'<?php phpinfo();'
 ```
 Save the file by pressing 'Ctrl + S' and then press 'Ctrl + X'  exit out of the test.php file after saving
 <html>
