@@ -166,7 +166,7 @@ sudo mysql_secure_installation
         <img style="float: center;" src=/3tierpictures/task1/phpmyadmin/12.png width="1000" />
      </h1>
 </html> 
-13. Choose and enter a **strong** password and **remember the password as it will be needed** and skip 'Remove anonymous users', ' Disallow root login remotely', 'Remove test database', and 'Reload privilege tables'. You can just press Enter to skip these questions. <br>
+13. Choose and enter a **strong** password and **remember the password as it will be needed** and skip "Remove anonymous users", "Disallow root login remotely", "Remove test database", and "Reload privilege tables". You can just press Enter to skip these questions. <br>
 <br>
 14. Enter:
 ```
