@@ -1,0 +1,44 @@
+1. Go to Amazon RDS
+
+2. Click create database
+
+3. Select mysql and standard create
+
+4. Under templates:
+Select free tier
+
+ Under settings:
+remember name and username - database-1 (name of database) and admin
+
+make a password:
+2745fT!c
+
+Under connectvity select VPC:
+
+
+
+5. Go to phpmyadmin ec2 go to:
+/etc/phpmyadmin/
+
+
+6. ls to see files and sudo nano config.inc.php
+
+7) Alt + g - below lin 102 or under } paste:
+$i++;
+$cfg['Servers'][$i]['host']          = '__FILL_IN_DETAILS__';
+$cfg['Servers'][$i]['port']          = '3306';
+$cfg['Servers'][$i]['socket']        = '';
+$cfg['Servers'][$i]['connect_type']  = 'tcp';
+$cfg['Servers'][$i]['extension']     = 'mysql';
+$cfg['Servers'][$i]['compress']      = FALSE;
+$cfg['Servers'][$i]['auth_type']     = 'config';
+$cfg['Servers'][$i]['user']          = '__FILL_IN_DETAILS__';
+$cfg['Servers'][$i]['password']      = '__FILL_IN_DETAILS__'
+
+Change FILL in DETAILS lines
+host - endpoint url of data base , find on aws page
+user - name of database
+view credential details for host and user
+password - enter password from before
+
+8) 
