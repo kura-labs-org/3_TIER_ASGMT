@@ -106,7 +106,33 @@ sudo apt install php libapache2-mod-php php-mysql
      </h1>
 </html> 
 
+These packages are responsible for downloading php. <br>
+<br>
 
+6. Change directories to "/var/www/html". Changing to this directory can be done by typing this in the terminal: 
+```
+cd /var/www/html
+```
+Make sure the statement is well spaced as shown above otherwise it won't work
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task1/phpmyadmin/7.png width="1000" />
+     </h1>
+</html>
+
+7. In the "/var/www/html", create a test.php file:
+```
+sudo nano test.php
+```
+This directory requires admin privileges therefore each command must start with sudo <br>
+nano is a command to make a file and the words proceeding after nano is the name of the file and also its extension <br>
+<br>
+
+8. In the test.php file write the following shown below:
+```
+<?php phpinfo();
+```
+9. 
 # Task 1 Procedure: Create a Web Proxy:
 
 # Task 2 
