@@ -1,0 +1,8 @@
+1. Go to Ec2 page
+
+2. Under Load Balancing -> Target Groups
+
+3. Use default settings and name the target group name
+
+4. Select the reverse proxy ec2 and create the target group
+
