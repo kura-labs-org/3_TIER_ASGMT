@@ -456,7 +456,22 @@ systemctl status nginx
 # Task 2 
 
 # Task 2 Procedure: Making a AWS Load Balancer
-
+1. Go to the EC2 Page <br> 
+<br>
+2. On the left side of the screen, there is a menu. Written in large gray font is 'Load Balancing'. Click the subsection under it called 'Target Groups'.
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task2/1.png width="1000" />
+     </h1>
+</html> 
+3. When customizing the load balancer, use all default settings and also give it a target group name <br>
+<br>
+4. Under Available instances, choose the reverse proxy ec2 and create the target group:
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task2/2.png width="1000" />
+     </h1>
+</html> 
 
 # Task 3
 
