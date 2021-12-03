@@ -174,10 +174,12 @@ Reload privilege tables <br>
 <br>
 You can just press Enter to skip these questions. <br>
 <br>
-14. Enter:
+
+14. Hello:
 ```
-sudo mysql
+a
 ```
+15. 
 
 
 # Task 1 Procedure: Create a Web Proxy:
