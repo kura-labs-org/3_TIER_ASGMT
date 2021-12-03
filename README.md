@@ -76,6 +76,9 @@ sudo apt upgrade
      </h1>
 </html> 
 
+Running "sudo apt update" updates all the existing packages an EC2 could already download by giving it more options to download more packages that were recently made or give the EC2 the latest version of existing packages. Executing the command "sudo apt upgrade" offically updates the EC2's packages. <br>
+<br>
+
 # Task 1 Procedure: Create a Web Proxy:
 
 # Task 2 
