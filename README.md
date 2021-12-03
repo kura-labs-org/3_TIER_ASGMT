@@ -273,6 +273,7 @@ include /etc/phpmyadmin/apache.conf
         <img style="float: center;" src=/3tierpictures/task1/phpmyadmin/26.png width="1000" />
      </h1>
 </html> 
+
 26. Run:
 ```
 sudo systemctl restart apache2
@@ -282,7 +283,8 @@ sudo systemctl restart apache2
         <img style="float: center;" src=/3tierpictures/task1/phpmyadmin/27.png width="1000" />
      </h1>
 </html> 
-27. Run: 
+
+27. Run:
 ```
 sudo systemctl status apache2
 ```
@@ -291,7 +293,14 @@ sudo systemctl status apache2
         <img style="float: center;" src=/3tierpictures/task1/phpmyadmin/28.png width="1000" />
      </h1>
 </html> 
-28. 
+
+28. Go to the web browser to check for phpmyadmin. Enter in the web browser the EC2 public IP address followed by /phpmyadmin/
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task1/phpmyadmin/29.png width="1000" />
+     </h1>
+</html> 
+You can login by entering 'root' for the username and the password you created before for password
 
 # Task 1 Procedure: Create a Web Proxy:
 
