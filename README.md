@@ -6,9 +6,9 @@
 1. Use the link down below to make a VPC on Cloudformation: <br>
 https://docs.aws.amazon.com/codebuild/latest/userguide/cloudformation-vpc-template.html
 
-2.  Copy the Cloudformation VPC template from the link provided and paste it to a new document and name it with in the following yaml format: ''.yaml <br>
+2.  Copy the Cloudformation VPC template from the link provided and paste it to a new document and name it with in the following yaml format: "".yaml <br>
 <br>
-'' - is the name you can name your yaml file <br>
+"" - is the name you can name your yaml file <br>
 In this demonstration, the yaml file is called vpc_temp.yaml <br>
 <br>
 
@@ -19,7 +19,7 @@ Below is the image of the VPC template that will be used:
      </h1>
 </html> 
 
-3. Go to Cloudformation and click 'Create Stack' and choose 'With new resources (standard)':
+3. Go to Cloudformation and click "Create Stack" and choose "With new resources (standard)":
 
 <html>
      <h1>
@@ -28,7 +28,7 @@ Below is the image of the VPC template that will be used:
 </html> 
 
 
-4. Choose 'Template is ready', 'Upload a template file' and click 'Choose file' to upload your yaml file with the VPC template:
+4. Choose "Template is ready", "Upload a template file" and click "Choose file" to upload your yaml file with the VPC template:
 <html>
      <h1>
         <img style="float: center;" src=/3tierpictures/task1/VPC/3.png width="1000" />
@@ -73,7 +73,7 @@ sudo apt upgrade
         <img style="float: center;" src=/3tierpictures/task1/phpmyadmin/2.png width="1000" />
      </h1>
 </html> 
-Running 'sudo apt update' updates all the existing packages an EC2 could already download by giving it more options to download more packages that were recently made or give the EC2 the latest version of existing packages. Executing the command 'sudo apt upgrade' offically updates the EC2's packages. <br>
+Running "sudo apt update" updates all the existing packages an EC2 could already download by giving it more options to download more packages that were recently made or give the EC2 the latest version of existing packages. Executing the command "sudo apt upgrade" offically updates the EC2's packages. <br>
 <br>
 
 3. In this EC2, apache2 will be installed by performing:
@@ -102,7 +102,7 @@ sudo apt install php libapache2-mod-php php-mysql
 </html> 
 These packages are responsible for downloading php. <br>
 <br>
-6. Change directories to '/var/www/html'. Changing to this directory can be done by typing this in the terminal: 
+6. Change directories to "/var/www/html". Changing to this directory can be done by typing this in the terminal: 
 ```
 cd /var/www/html
 ```
@@ -112,7 +112,7 @@ Make sure the statement is well spaced as shown above otherwise it won't work
         <img style="float: center;" src=/3tierpictures/task1/phpmyadmin/7.png width="1000" />
      </h1>
 </html> 
-7. In the '/var/www/html', create a test.php file:
+7. In the "/var/www/html", create a test.php file:
 ```
 sudo nano test.php
 ```
