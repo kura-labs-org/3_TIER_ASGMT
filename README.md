@@ -398,10 +398,11 @@ ls /etc/nginx/sites-enabled
      <h1>
         <img style="float: center;" src=/3tierpictures/task1/webproxy/12.png width="1000" />
      </h1>
-</html> 
+</html>
+
 13. Run:
 ```
-cd ..
+cd
 ```
 Now the terminal is in the /etc/nginx directory. Run:
 ```
