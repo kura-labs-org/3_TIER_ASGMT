@@ -476,3 +476,84 @@ systemctl status nginx
 # Task 3
 
 # Task 3 Procedure: Create AWS MySQL Database
+1. Go to Amazon RDS <br>
+<br>
+2. Click "Create Database" <br>
+<br>
+3. Select mysql and standard create
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task3/1.png width="1000" />
+     </h1>
+</html> 
+
+4. Under Settings remember the name of the DB instance and the master username 
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task3/2.png width="1000" />
+     </h1>
+</html>
+Also make a password and confirm as it will be needed to access this database. <br>
+<br>
+   Under connectivity select a VPC. The default public VPC is used in this demonstration.
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task3/3.png width="1000" />
+     </h1>
+</html>
+
+   Under templates select free tier
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task3/4.png width="1000" />
+     </h1>
+</html> 
+
+5. Reenter the phpmyadmin EC2 and access the 'etc/phpmyadmin directory' by using this command:
+```
+cd /etc/phpmyadmin/
+```
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task3/5.png width="1000" />
+     </h1>
+</html> 
+Afterwards use the ls command to see the files:
+```
+ls
+```
+There should be a file called "config.inc.php". This file needs to be edited but it is in a root directory, therefore the command sudo nano is neccessary to access and edit the file:
+```
+sudo nano config.inc.php
+```
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task3/6.png width="1000" />
+     </h1>
+</html> 
+6. Use ALT + G to go to line 102. Below the }, paste the following code:
+```
+
+```
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task3/7.png width="1000" />
+     </h1>
+</html> 
+7. Access the database through the internet browser by copying the endpoint: <br>
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task3/8.png width="1000" />
+     </h1>
+</html>
+There are two server choices to choose from:
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task3/9.png width="1000" />
+     </h1>
+</html>
+<html>
+     <h1>
+        <img style="float: center;" src=/3tierpictures/task3/10.png width="1000" />
+     </h1>
+</html> 
