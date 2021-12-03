@@ -413,13 +413,13 @@ ls
         <img style="float: center;" src=/3tierpictures/task1/webproxy/13.png width="1000" />
      </h1>
 </html> 
-There are many files and there should be a file called nginx.conf. Run:
-```
+There are many files and there should be a file called nginx.conf. Run: <br>
+<br>
 sudo nano nginx.conf
-```
+
 14. Run:
 ```
-sudo systemctl restart nginx
+sudo nano nginx.conf
 ```
 <html>
      <h1>
