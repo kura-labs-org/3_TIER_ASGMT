@@ -533,6 +533,7 @@ sudo nano config.inc.php
 </html> 
 6. Use ALT + G to go to line 102. Below the }, paste the following code:
 ```
+
 $i++;
 $cfg['Servers'][$i]['host']          = '__FILL_IN_DETAILS__';
 $cfg['Servers'][$i]['port']          = '3306';
@@ -543,7 +544,9 @@ $cfg['Servers'][$i]['compress']      = FALSE;
 $cfg['Servers'][$i]['auth_type']     = 'config';
 $cfg['Servers'][$i]['user']          = '__FILL_IN_DETAILS__';
 $cfg['Servers'][$i]['password']      = '__FILL_IN_DETAILS__'
+
 ```
+
 <html>
      <h1>
         <img style="float: center;" src=/3tierpictures/task3/7.png width="1000" />
