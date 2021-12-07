@@ -25,7 +25,7 @@ In this project, we used AWS services listed below.
 * Nat Gateway
 * MySQL Database
 
-## Precedure:
+## Procedure:
 
 ### Task 1: We will set up the resources using the  **[base.yaml](https://github.com/ibrahima1289/3_TIER_ASGMT/blob/main/base.yaml)** file.
 
