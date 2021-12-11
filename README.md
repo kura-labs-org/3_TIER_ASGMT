@@ -3,4 +3,4 @@
 
 <h2>Welcome to the 3 Tier assignment repo.</h2>  
 
-![Test Image 1](3 Tier assignment.pdf)
+![Test Image 1]("topology.png")
