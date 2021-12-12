@@ -3,4 +3,4 @@
 
 <h2>Welcome to the 3 Tier assignment repo.</h2>  
 
-- Make a pull request to submit your assignment: 
+![alt text](https://github.com/Bishajit/3_TIER_ASGMT/blob/main/topology.png)
