@@ -191,7 +191,9 @@ You can just press Enter to skip these questions. <br>
 ```
 sudo mysql
 ```
-15. Run:
+Now the terminal will display a line where it enters into MySQL<br>
+<br>
+15. More packages are needed to be install phpmyadmin and to configure a password when always entering phpmyadmin:
 ```
 sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl
 ```
