@@ -497,7 +497,7 @@ systemctl status nginx
 # Task 3
 
 ## Task 3 Procedure: Create AWS MySQL Database
-Go to Amazon RDS <br>
+1. Go to Amazon RDS <br>
 <br>
 2. Click "Create Database" <br>
 <br>
