@@ -594,7 +594,7 @@ There are two server choices to choose from:
 
 # Task 4
 Below is a topology of services that was used in this documentation and how they are all connected to one another
-# Task 4 Topology
+## Task 4 Topology
 <html>
      <h1>
         <img style="float: center;" src=3tierpictures/3tier.drawio.png width="1000" />
