@@ -6,7 +6,7 @@ A 3-tier architecture in technical terms are three following technologies that a
 <br>
 
 This documentation will explain one possible way how to make a 3-tier architecture on AWS by completing the following tasks:
-- Make a public and private subnet
+* Make a public and private subnet
 * Create a phpmyadmin EC2
 * Develop a Web Proxy for caching
 * Initiate an AWS Load Balancer that is connected to the reverse proxy
