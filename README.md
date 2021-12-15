@@ -317,25 +317,30 @@ You can login by entering 'root' for the username and the password you created b
 ## Task 1 Procedure: Create a Web Proxy
 1. Create another EC2 and have the phpmyadmin EC2 running as well <br>
 <br>
-2. This EC2 will be referenced as webtier <br>
+2. This EC2 will be referenced as webtier in this documentation <br>
 <br>
 3. Include ports ssh and http that can be accessed anywhere <br>
 <br>
-4. Run:
+4. Run the following commands to update the EC2 package list:
 ```
 sudo apt update
+```
+Now run the following command to upgrade all the packages to their latest versions:
+```
 sudo apt upgrade
 ```
-5. Run:
+5. Nginx will now be installed on EC2 by the following command:
 ```
 sudo apt install nginx
 ```
+
 <html>
      <h1>
         <img style="float: center;" src=/3tierpictures/task1/webproxy/6.png width="1000" />
      </h1>
 </html> 
-6. Run:
+
+6. After downloading Nginx, the enter the "cd /etc/nginx/sites-available" with the following command:
 ```
 cd /etc/nginx/sites-available
 ```
