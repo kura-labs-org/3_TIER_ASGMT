@@ -323,7 +323,6 @@ You can login by entering 'root' for the username and the password you created b
 2. This EC2 will be referenced as webtier in this documentation <br>
 <br>
 3. Include ports ssh and http that can be accessed anywhere <br>
-<br>
 4. Run the following commands to update the EC2 package list:
 ```
 sudo apt update
