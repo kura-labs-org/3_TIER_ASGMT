@@ -316,14 +316,20 @@ You can login by entering 'root' for the username and the password you created b
 
 ## Task 1 Procedure: Create a Web Proxy
 
-Create another EC2 and have the phpmyadmin EC2 running as well <br>
+1.Create another EC2 and have the phpmyadmin EC2 running as well <br>
 <br>
 2. This EC2 will be referenced as webtier in this documentation <br>
 <br>
 3. Include ports ssh and http that can be accessed anywhere <br>
 <br>
 4. Run the following commands to update the EC2 package list:
+```
 
+```
+
+```
+
+```
 
 5. Nginx will now be installed on EC2 by the following command:
 ```
