@@ -1,8 +1,19 @@
 # 3_TIER_ASGMT
+A 3-tier architecture in technical terms are three following technologies that are connected together: 
+* Cilent or host computer
+* Server
+* Database
+<br>
+This documentation will explain one possible way how to make a 3-tier architecture on AWS by completing the following tasks:
+* Make private and public subnet
+* Create a phpmyadmin EC2
+* Develop a Web Proxy for caching
+* Initiate an AWS Load Balancer that is connected to the reverse proxy
+* Lastly, make a MySQL database on AWS
 
 # Task 1
 
-# Task 1 Procedure: Create a Public and Private Subnet VPC
+## Task 1 Procedure: Create a Public and Private Subnet VPC
 1. Use the link down below to make a VPC on Cloudformation: <br>
 https://docs.aws.amazon.com/codebuild/latest/userguide/cloudformation-vpc-template.html
 
@@ -51,7 +62,7 @@ Below is the image of the VPC template that will be used:
 </html> 
 
 
-# Task 1 Procedure: Creating a phpmyadmin EC2
+## Task 1 Procedure: Creating a phpmyadmin EC2
 
 1. Create an EC2 on AWS. In this tutorial, the Ubuntu 20.0.4 EC2 will be used. After creating it, log in into the EC2. <br>
 <br>
@@ -302,7 +313,7 @@ sudo systemctl status apache2
 </html> 
 You can login by entering 'root' for the username and the password you created before for password
 
-# Task 1 Procedure: Create a Web Proxy:
+## Task 1 Procedure: Create a Web Proxy
 1. Create another EC2 and have the phpmyadmin EC2 running as well <br>
 <br>
 2. This EC2 will be referenced as webtier <br>
@@ -455,7 +466,7 @@ systemctl status nginx
 
 # Task 2 
 
-# Task 2 Procedure: Making a AWS Load Balancer
+## Task 2 Procedure: Making a AWS Load Balancer
 1. Go to the EC2 Page <br> 
 <br>
 2. On the left side of the screen, there is a menu. Written in large gray font is 'Load Balancing'. Click the subsection under it called 'Target Groups'.
@@ -475,7 +486,7 @@ systemctl status nginx
 
 # Task 3
 
-# Task 3 Procedure: Create AWS MySQL Database
+## Task 3 Procedure: Create AWS MySQL Database
 1. Go to Amazon RDS <br>
 <br>
 2. Click "Create Database" <br>
