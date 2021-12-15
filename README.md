@@ -591,3 +591,12 @@ There are two server choices to choose from:
         <img style="float: center;" src=/3tierpictures/task3/10.png width="1000" />
      </h1>
 </html> 
+
+# Task 4
+Below is a topology of services that was used in this documentation and how they are all connected to one another
+# Task 4 Topology
+<html>
+     <h1>
+        <img style="float: center;" src=3tierpictures/3tier.drawio.png width="1000" />
+     </h1>
+</html>
