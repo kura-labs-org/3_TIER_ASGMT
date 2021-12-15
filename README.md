@@ -316,7 +316,7 @@ You can login by entering 'root' for the username and the password you created b
 
 ## Task 1 Procedure: Create a Web Proxy
 
-1.Create another EC2 and have the phpmyadmin EC2 running as well <br>
+1. Create another EC2 and have the phpmyadmin EC2 running as well <br>
 <br>
 2. This EC2 will be referenced as webtier in this documentation <br>
 <br>
@@ -324,11 +324,11 @@ You can login by entering 'root' for the username and the password you created b
 <br>
 4. Run the following commands to update the EC2 package list:
 ```
-
+sudo apt update
 ```
-
+Now the following command to upgrade all the packages to their latest versions:
 ```
-
+sudo apt upgrade
 ```
 
 5. Nginx will now be installed on EC2 by the following command:
@@ -358,7 +358,7 @@ There should be one file called "default"<br>
      </h1>
 </html> 
 
-7. Now run:
+7. Run the following command to unlink the default file to release the default settings Nginx was following:
 ```
 sudo unlink /etc/nginx/sites-enabled/default
 ```
@@ -367,8 +367,10 @@ sudo unlink /etc/nginx/sites-enabled/default
         <img style="float: center;" src=/3tierpictures/task1/webproxy/8.png width="1000" />
      </h1>
 </html> 
+By unlinking the default file, a new file can be made to replace the default file to configure a reverse proxy. <br>
+<br>
 
-8. Run the command:
+8. Make a file to enable a with a .conf extension:
 ```
 sudo nano reverse-proxy.conf
 ```
@@ -389,7 +391,7 @@ Save with CTRL + S and exit with CTRL + X <br>
      </h1>
 </html> 
 
-10. Run:
+10. See what files are in this directory:
 ```
 ls /etc/nginx/sites-enabled
 ```
@@ -399,7 +401,7 @@ ls /etc/nginx/sites-enabled
      </h1>
 </html> 
 
-11. Run:
+11. Run the command to enable the new .conf file:
 ```
 sudo ln -s /etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-enabled/reverse-proxy.conf
 ```
@@ -409,7 +411,7 @@ sudo ln -s /etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-enable
      </h1>
 </html> 
 
-12. Run:
+12. Re-running the "ls /etc/nginx/sites-enabled" will now show "reverse-proxy.conf" in blue to show it is now enabled and the application is on port 80:
 ```
 ls /etc/nginx/sites-enabled
 ```
@@ -419,7 +421,7 @@ ls /etc/nginx/sites-enabled
      </h1>
 </html>
 
-13. Run:
+13. Now reenter back into the home directory:
 ```
 cd
 ```
@@ -435,7 +437,7 @@ ls
 There are many files and there should be a file called nginx.conf. <br>
 <br>
 
-14. Run:
+14. Edit the nginx.conf file with sudo permissions:
 ```
 sudo nano nginx.conf
 ```
@@ -445,7 +447,7 @@ sudo nano nginx.conf
      </h1>
 </html> 
 
-15. Run:
+15. Nginx should now be successfully installed. Check the status to see if it is installed.
 ```
 systemctl status nginx
 ```
